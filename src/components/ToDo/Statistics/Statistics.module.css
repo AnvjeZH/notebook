@@ -1,0 +1,11 @@
+.stats_wrapper {
+    width: 400px;
+    margin: 30px auto 0 auto;
+}
+.stats_text {
+padding: 10px 10px 10px 0;
+font-size: 24px;
+font-weight: bold;
+color: rgb(129, 108, 135);
+
+}

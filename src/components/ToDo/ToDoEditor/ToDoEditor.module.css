@@ -1,0 +1,29 @@
+.wrap {
+    width: 400px;
+    margin: 30px auto 0 auto;
+}
+
+.texarea {
+    display: block;
+    width: 380px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.create_Btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 5px 25px;
+    border-color: transparent;
+    border-radius: 4px;
+    font-size: 18px;
+    color: white;
+    background-color:  rgb(166, 142, 172);
+    cursor: pointer;
+}
+.create_Btn:hover, .create_Btn:focus {
+    background-color: rgb(129, 108, 135);
+}

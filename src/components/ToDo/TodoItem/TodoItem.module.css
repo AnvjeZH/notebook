@@ -1,0 +1,18 @@
+.delete_btn {
+    padding: 5px 10px;
+  border-color: transparent;
+  border-radius: 4px;
+  font-size: 18px;
+  background-color: white;
+  cursor: pointer;
+}
+.delete_btn:hover,
+.delete_btn:focus {
+  background-color: rgb(129, 108, 135);
+  color: white;
+}
+.item_text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}

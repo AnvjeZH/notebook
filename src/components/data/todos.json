@@ -1,0 +1,27 @@
+[
+  {
+    "id": "id-1",
+    "text": "HTML",
+    "completed": true
+  },
+  {
+    "id": "id-2",
+    "text": "CSS",
+    "completed": true
+  },
+  {
+    "id": "id-3",
+    "text": "JS",
+    "completed": true
+  },
+  {
+    "id": "id-4",
+    "text": "React JS",
+    "completed": false
+  },
+  {
+    "id": "id-5",
+    "text": "Node.js",
+    "completed": false
+  }
+]
