@@ -6,6 +6,8 @@ import ToDoEditor from './ToDo/ToDoEditor/ToDoEditor';
 import Filter from './ToDo/Filter/Filter';
 import Modal from './ToDo/Modal/Modal';
 import { Component } from 'react';
+import IconButton from './ToDo/IconButton/IconButton';
+import { ImPlus } from 'react-icons/im';
 
 class App extends Component {
   state = {
@@ -44,6 +46,7 @@ class App extends Component {
     this.setState(({ todos }) => ({
       todos: [newTodo, ...todos],
     }));
+    this.toggleModal()
   };
 
   calculateCompletedCount = () => {
@@ -87,9 +90,17 @@ class App extends Component {
 
     return (
       <div>
-        <Statistics total={totalCount} countCompleted={completedTodo} />
+        <IconButton onClick={this.toggleModal} aria-label='Add todo'>
+          <ImPlus style={{ width: '40px', height: '40px', fill: 'white' }} />
+        </IconButton>
 
-        <ToDoEditor onSubmit={this.addToDo} />
+        {showModal && (
+          <Modal onClose={this.toggleModal}>
+            <ToDoEditor onSubmit={this.addToDo} />
+          </Modal>
+        )}
+
+        <Statistics total={totalCount} countCompleted={completedTodo} />
 
         <Filter value={filter} onChange={this.changeFilter} />
 
@@ -98,31 +109,8 @@ class App extends Component {
           onDeleteToDo={this.deleteToDo}
           toggle={this.toggleCompleted}
         />
-        <button type="button" onClick={this.toggleModal}>
-          Open modal window
-        </button>
-        {showModal && (
-          <Modal onClose={this.toggleModal}>
-            <h1>Some text</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Similique amet id ipsa harum, sed cupiditate cumque accusantium
-              vero numquam accusamus iusto est consequatur sunt, architecto quis
-              quibusdam unde odio quos voluptatem animi cum eveniet repellendus
-              in aspernatur! Non laborum libero aliquam cum voluptate,
-              praesentium pariatur placeat corrupti ipsam doloribus voluptatibus
-              enim, tempore aliquid dolorem, suscipit animi. Minima aliquid, ut
-              odit mollitia sunt qui cum obcaecati dolorum soluta aliquam,
-              perferendis placeat enim nostrum sequi maiores animi temporibus in
-              dolor illum a dignissimos eius fugit? Illum perferendis nemo ex
-              debitis nesciunt, architecto voluptate soluta mollitia officia
-              doloremque eum vitae ratione, tempora deserunt!
-            </p>
-            <button type="button" onClick={this.toggleModal}>
-              Close
-            </button>
-          </Modal>
-        )}
+
+        
       </div>
     );
   }
